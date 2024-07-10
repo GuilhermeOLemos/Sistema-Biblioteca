@@ -43,14 +43,26 @@ public class DaoLivro {
         return false;
     }
 
-    public Livro obter(int indice){
-        if(indice < 0 || indice > DaoLivro.numObjeto){
+    public Livro obter(int indice) {
+        if (indice < 0 || indice > DaoLivro.numObjeto) {
             return null;
         }
         return DaoLivro.lista[indice];
     }
 
-//    ToDo: Método qtdObjetos
-//    ToDo: Método obterLista
-//    ToDo: Método adicionarTodos
+    public int qtdObjetos() {
+        return DaoLivro.numObjeto;
+    }
+
+    public Livro[] obterLista() {
+        Livro[] copia = new Livro[DaoLivro.numObjeto];
+        System.arraycopy(DaoLivro.lista, 0, copia, 0, DaoLivro.numObjeto);
+        return copia;
+    }
+
+    public void adicionarTodos(Livro[] copia) {
+        for (int i = 0; i < copia.length; i++) {
+            this.adicionar(copia[i]);
+        }
+    }
 }
