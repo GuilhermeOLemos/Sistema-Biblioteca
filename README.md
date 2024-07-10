@@ -1,5 +1,5 @@
 # Sistema de Gerenciamento de Biblioteca
-=====================================
+
 
 ## Visão Geral
 
