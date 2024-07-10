@@ -24,7 +24,7 @@ public class DaoLivro {
 
         DaoLivro.lista[DaoLivro.numObjeto] = novo;
         DaoLivro.numObjeto++;
-//        Serializador.salvarObjetos();
+        Serializador.salvarObjetos();
         return true;
     }
 
@@ -36,7 +36,7 @@ public class DaoLivro {
                 }
                 DaoLivro.lista[DaoLivro.numObjeto - 1] = null;
                 DaoLivro.numObjeto--;
-//                Serializador.salvarObjetos();
+                Serializador.salvarObjetos();
                 return true;
             }
         }

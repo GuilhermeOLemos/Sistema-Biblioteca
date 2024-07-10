@@ -24,7 +24,7 @@ public class DaoPeriodico {
 
         DaoPeriodico.lista[DaoPeriodico.numObjeto] = novo;
         DaoPeriodico.numObjeto++;
-//        Serializador.salvarObjetos();
+        Serializador.salvarObjetos();
         return true;
     }
 
@@ -36,7 +36,7 @@ public class DaoPeriodico {
                 }
                 DaoPeriodico.lista[DaoPeriodico.numObjeto - 1] = null;
                 DaoPeriodico.numObjeto--;
-//                Serializador.salvarObjetos();
+                Serializador.salvarObjetos();
                 return true;
             }
         }

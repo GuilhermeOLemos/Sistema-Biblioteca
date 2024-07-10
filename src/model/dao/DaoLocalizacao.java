@@ -24,7 +24,7 @@ public class DaoLocalizacao {
 
         DaoLocalizacao.lista[DaoLocalizacao.numObjeto] = novo;
         DaoLocalizacao.numObjeto++;
-//        Serializador.salvarObjetos();
+        Serializador.salvarObjetos();
         return true;
     }
 
@@ -36,7 +36,7 @@ public class DaoLocalizacao {
                 }
                 DaoLocalizacao.lista[DaoLocalizacao.numObjeto - 1] = null;
                 DaoLocalizacao.numObjeto--;
-//                Serializador.salvarObjetos();
+                Serializador.salvarObjetos();
                 return true;
             }
         }
