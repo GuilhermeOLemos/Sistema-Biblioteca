@@ -27,14 +27,29 @@ public class Serializador {
             oos.writeObject(listaLocalizacoes);
 
             oos.close();
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public static void recuperarObjetos() {
-        
+        try {
+            FileInputStream fis = new FileInputStream("objetos.data");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            Livro[] listaLivros = (Livro[]) ois.readObject();
+            Periodico[] listaPeriodicos = (Periodico[]) ois.readObject();
+            Localizacao[] listaLocalizacoes = (Localizacao[]) ois.readObject();
+
+            ois.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
