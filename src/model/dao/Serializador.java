@@ -17,6 +17,15 @@ public class Serializador {
             FileOutputStream fos = new FileOutputStream("objetos.data");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
+            Livro[] listaLivros = new DaoLivro().obterLista();
+            oos.writeObject(listaLivros);
+
+            Periodico[] listaPeriodicos = new DaoPeriodico().obterLista();
+            oos.writeObject(listaPeriodicos);
+
+            Localizacao[] listaLocalizacoes = new DaoLocalizacao().obterLista();
+            oos.writeObject(listaLocalizacoes);
+
             oos.close();
         } catch (FileNotFoundException e){
             e.printStackTrace();
@@ -26,6 +35,6 @@ public class Serializador {
     }
 
     public static void recuperarObjetos() {
-
+        
     }
 }
