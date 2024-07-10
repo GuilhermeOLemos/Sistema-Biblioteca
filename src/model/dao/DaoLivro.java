@@ -42,8 +42,15 @@ public class DaoLivro {
         }
         return false;
     }
-//    Método obter
-//    Método qtdObjetos
-//    Método obterLista
-//    Método adicionarTodos
+
+    public Livro obter(int indice){
+        if(indice < 0 || indice > DaoLivro.numObjeto){
+            return null;
+        }
+        return DaoLivro.lista[indice];
+    }
+
+//    ToDo: Método qtdObjetos
+//    ToDo: Método obterLista
+//    ToDo: Método adicionarTodos
 }
