@@ -1,13 +1,28 @@
 package viewer;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
+import javax.swing.JOptionPane;
 
-public class JanelaAbstrata extends JFrame {
+import controller.CtrlAbstrato;
+
+abstract public class JanelaAbstrata extends JFrame {
 	
-	private CtrlAbstrato ctrl
+	private CtrlAbstrato ctrl;
 	
+	public JanelaAbstrata(CtrlAbstrato c) {
+		super();
+		this.ctrl = c;
+	}
+	
+	public CtrlAbstrato getCtrl() {
+		return this.ctrl;
+	}
+	
+	public void fechar() {
+		this.setVisible(false);
+	}
+	
+	public void notificar(String texto) {
+		JOptionPane.showMessageDialog(null, texto);
+	}
 }
